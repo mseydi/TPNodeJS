@@ -2,12 +2,13 @@ import  express from  "express";
 import mongoose from "mongoose"
 import bodyParser from "body-parser";
 import Book from "./book";
+import cors from "cors"
 
 
 const app=express();
 /*Middlewer pour parserles objet json*/
 app.use(bodyParser.json());
-
+app.use(cors());
 app.get("/", (req,resp)=>{
     resp.send("Hello Express");
 });
